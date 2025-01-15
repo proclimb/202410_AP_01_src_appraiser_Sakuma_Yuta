@@ -40,7 +40,7 @@ function subStockView($param)
 					<th>距離</th>
 					<td>
 						<?php
-						for ($i = 0; $i < 27; $i++) {
+						for ($i = 0; $i < 4; $i++) {
 						?>
 							<input type="checkbox" name="sDistance[]" value="<?php print $i + 1; ?>" <?php for ($j = 0; $j < 4; $j++) {
 																											if ($param["sDistance"][$j] == $i + 1) print ' checked="checked"';
@@ -60,7 +60,7 @@ function subStockView($param)
 					<th>ランク</th>
 					<td>
 						<?php
-						for ($i = 0; $i < 27; $i++) {
+						for ($i = 0; $i < 5; $i++) {
 						?>
 							<input type="checkbox" name="sRank[]" value="<?php print $i + 1; ?>" <?php for ($j = 0; $j < 5; $j++) {
 																										if ($param["sRank"][$j] == $i + 1) print ' checked="checked"';
@@ -111,6 +111,12 @@ function subStockView($param)
 		</div>
 
 		<input type="image" src="./images/btn_search.png" onclick="form.act.value='stockEditComplete';form.submit();" />
+
+		<!--
+		仕入管理
+		var_dump($_REQUEST);
+　　　	array(1) { ["act"]=> string(5) "stock" } 実行処理がないため、以下のreturnで
+　　　　プログラムは一旦止まる-->
 
 		<hr />
 
