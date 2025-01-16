@@ -115,8 +115,7 @@ function subStockView($param)
 		<!--
 		仕入管理
 		var_dump($_REQUEST);
-　　　	array(1) { ["act"]=> string(5) "stock" } 実行処理がないため、以下のreturnで
-　　　　プログラムは一旦止まる-->
+		★不具合修正 #32163 この時点でstockがないので、検索を押下したら、127行目以下へ進む-->
 
 		<hr />
 
@@ -158,23 +157,23 @@ function subStockView($param)
 				$res  = mysqli_query($param["conn"], $sql);
 				$i = 0;
 				while ($row = mysqli_fetch_array($res)) {
-					$stockNo     = htmlspecialchars($row[1]);
-					$charge      = htmlspecialchars($row[2]);
-					$rank        = fnRankName(htmlspecialchars($row[3] - 1));
-					$insDT       = htmlspecialchars($row[4]);
-					$article     = htmlspecialchars($row[5]);
-					$articleFuri = htmlspecialchars($row[6]);
-					$room        = htmlspecialchars($row[7]);
-					$area        = htmlspecialchars($row[8]);
-					$station     = htmlspecialchars($row[9]);
-					$distance    = fnRankName(htmlspecialchars($row[10] - 1));
-					$agent       = htmlspecialchars($row[11]);
-					$store       = htmlspecialchars($row[12]);
-					$cover       = htmlspecialchars($row[13]);
-					$visitDT     = htmlspecialchars($row[14]);
-					$deskPrice   = htmlspecialchars(fnNumFormat($row[15]));
-					$vendorPrice = htmlspecialchars(fnNumFormat($row[16]));
-					$note        = htmlspecialchars($row[17]);
+					$stockNo     = htmlspecialchars($row[0]);
+					$charge      = htmlspecialchars($row[1]);
+					$rank        = fnRankName(htmlspecialchars($row[2] - 1));
+					$insDT       = htmlspecialchars($row[3]);
+					$article     = htmlspecialchars($row[4]);
+					$articleFuri = htmlspecialchars($row[5]);
+					$room        = htmlspecialchars($row[6]);
+					$area        = htmlspecialchars($row[7]);
+					$station     = htmlspecialchars($row[8]);
+					$distance    = fnRankName(htmlspecialchars($row[9] - 1));
+					$agent       = htmlspecialchars($row[10]);
+					$store       = htmlspecialchars($row[11]);
+					$cover       = htmlspecialchars($row[12]);
+					$visitDT     = htmlspecialchars($row[13]);
+					$deskPrice   = htmlspecialchars(fnNumFormat($row[14]));
+					$vendorPrice = htmlspecialchars(fnNumFormat($row[15]));
+					$note        = htmlspecialchars($row[16]);
 				?>
 					<tr>
 						<td class="list_td<?php print $i; ?>"><?php print $charge; ?></td>
