@@ -28,7 +28,7 @@ function subStockView($param)
 			<table border="0" cellpadding="2" cellspacing="0">
 				<tr>
 					<th>除外</th>
-					<td><input type="checkbox" name="sDel" value="0" <?php if ($param["sDel"] == 0) print ' checked="checked"' ?> /></td>
+					<td><input type="checkbox" name="sDel" value="1" <?php if ($param["sDel"] == 1) print ' checked="checked"' ?> /></td>
 					<th>最寄駅</th>
 					<td><input type="text" name="sStation" value="<?php print $param["sStation"] ?>" size="30" /></td>
 				</tr>
@@ -112,10 +112,6 @@ function subStockView($param)
 
 		<input type="image" src="./images/btn_search.png" onclick="form.act.value='stockEditComplete';form.submit();" />
 
-		<!--
-		仕入管理
-		var_dump($_REQUEST);
-		★不具合修正 #32163 この時点でstockがないので、検索を押下したら、127行目以下へ進む-->
 
 		<hr />
 
@@ -219,6 +215,7 @@ function subStockEditView($param)
 		var cal1 = new JKL.Calendar("cal1", "form", "visitDT");
 	</script>
 
+	<?php ?>
 	<h1>仕入<?php print $param["purpose"] ?></h1>
 
 	<form name="form" id="form" action="index.php" method="get">
