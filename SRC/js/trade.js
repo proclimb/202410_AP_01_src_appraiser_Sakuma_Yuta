@@ -4,7 +4,7 @@
 function fnTradeEditCheck() {
 	tmp = form.name.value;
 <<<<<<< HEAD
-	if (tmp.length === "") {
+	if (tmp.trim()  === "") {
 =======
 		alert('業者名を入力してください');
 		return;
