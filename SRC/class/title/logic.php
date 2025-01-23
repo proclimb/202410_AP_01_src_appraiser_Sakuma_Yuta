@@ -53,6 +53,7 @@ function subFTitleEdit()
 
     if ($param["DocNo"]) {
         $sql = fnSqlFTitleEdit($param["DocNo"]);
+
         $res = mysqli_query($param["conn"], $sql);
         $row = mysqli_fetch_array($res);
 
@@ -67,7 +68,6 @@ function subFTitleEdit()
         $param["purpose"] = '登録';
         $param["btnImage"] = 'btn_enter.png';
     }
-
     subMenu();
     if ($param["sDocNo"]) {
         subFTitleItemEditView($param);
@@ -87,7 +87,7 @@ function subFTitleEditComplete()
     $param["classNo"] = mysqli_real_escape_string($param["conn"], $_REQUEST['classNo']);
     $param["seqNo"] = mysqli_real_escape_string($param["conn"], $_REQUEST['seqNo']);
     $param["name"] = mysqli_real_escape_string($param["conn"], $_REQUEST['name']);
-    $param["sClassNo"] = mysqli_real_escape_string($conn, $_REQUEST['sClassNo']);
+    $param["sClassNo"] = mysqli_real_escape_string($param["conn"], $_REQUEST['sClassNo']);
 
     $ErrClassNo = subFTitleRepetition($param["classNo"], $param["DocNo"]);
 
@@ -184,7 +184,7 @@ function subFTitleDelete()
         $res = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_array($res)) {
             $sql = fnSqlFTitleDelete($row['DOCNO']);
-            $result = mysqil_query($conn, $sql);
+            $result = mysqli_query($conn, $sql);
         }
     } else {
         $sql = fnSqlFTitleDelete($DocNo);
