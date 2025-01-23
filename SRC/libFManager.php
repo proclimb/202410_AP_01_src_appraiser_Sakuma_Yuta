@@ -107,6 +107,7 @@ function subFManager()
 				<?php
 				$sql = fnSqlFManagerList(1, $sDel, $sSearchDTFrom, $sSearchDTTo, $sName, $sRoom, $sNote, $sPage, $orderBy, $orderTo);
 				$res = mysqli_query($conn, $sql);
+				var_dump($res);
 				$i = 0;
 				while ($row = mysqli_fetch_array($res)) {
 					$fMNo  = htmlspecialchars($row[0]);
@@ -155,10 +156,10 @@ function subFManagerEdit()
 	$fMNo = $_REQUEST['fMNo'];
 
 	if ($fMNo) {
+
 		$sql = fnSqlFManagerEdit($fMNo);
 		$res = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_array($res);
-
 		$name  = htmlspecialchars($row[0]);
 		$room  = htmlspecialchars($row[1]);
 		$note  = htmlspecialchars($row[2]);
@@ -198,7 +199,7 @@ function subFManagerEdit()
 					</td>
 				</tr>
 				<tr>
-					<th>物件名</th>
+					<th>物件名<span class="red">（必須）</span></th>
 					<td><input type="text" name="name" value="<?php print $name; ?>" /></td>
 				</tr>
 				<tr>
