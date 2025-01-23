@@ -3,7 +3,7 @@
 //
 function fnTradeEditCheck() {
 	tmp = form.name.value;
-	if (tmp.length < 0) {
+	if (tmp.length === "") {
 		alert('業者名を入力してください');
 		return;
 	}
@@ -31,13 +31,13 @@ function fnTradeEditCheck() {
 	}
 
 	tmp = form.zip.value;
-	if (tmp.length > 0 && !tmp.match(/^\d{3}(\s*|-)\d{4}$/)) {
+	if (tmp.length > 0 && !tmp.match(/^\d{3}-*\d{4}$/)) {
 		alert("正しい郵便番号(***-**** 又は ******* )で\n入力してください");
 		return;
 	}
 
 	tmp = form.prefecture.value;
-	if (tmp.length >= 10) {
+	if (tmp.length > 10) {
 		alert('住所（都道府県）は10文字以内で入力してください');
 		return;
 	}

@@ -107,7 +107,6 @@ function subFManager()
 				<?php
 				$sql = fnSqlFManagerList(1, $sDel, $sSearchDTFrom, $sSearchDTTo, $sName, $sRoom, $sNote, $sPage, $orderBy, $orderTo);
 				$res = mysqli_query($conn, $sql);
-				var_dump($res);
 				$i = 0;
 				while ($row = mysqli_fetch_array($res)) {
 					$fMNo  = htmlspecialchars($row[0]);
@@ -555,7 +554,7 @@ function subFManagerViewEditComplete()
 	}
 
 	if ($_FILES['pdfFile']['tmp_name']) {
-		move_uploaded_file($_FILES['pdfFile']['tmp_name'], './pdfs/' . $pdfNo . '.pdf');
+		move_uploaded_file($_FILES['pdfFile']['tmp_name'], './pdfs/' . substr('0000000000' . $pdfNo, -10) . '.pdf');
 	}
 
 	$_REQUEST['act'] = 'fManagerView';
