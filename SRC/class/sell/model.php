@@ -84,7 +84,7 @@ function fnSqlSellList($flg, $param)
 //
 function fnSqlSellEdit($sellNo)
 {
-    $select  = "SELECT SEARCHDT,ARTICLE,ADDRESS,STATION,IF(FOOT > 0,FOOT,''),";
+    $select  = "SELECT IF(SEARCHDT > '0000-00-00',DATE_FORMAT(SEARCHDT,'%Y/%m/%d'),''),ARTICLE,ADDRESS,STATION,IF(FOOT > 0,FOOT,''),";
     $select .= "IF(YEARS > 0,YEARS,''),IF(FLOOR > 0,FLOOR,''),IF(AREA > 0,AREA,''),SELLER,IF(PRICE > 0,PRICE,''),NOTE";
     $from = " FROM TBLSELL";
     $where = " WHERE DEL = 1";
@@ -111,7 +111,7 @@ function fnSqlSellUpdate($param)
     $sql .= ",PRICE = '" . $param["price"] . "'";
     $sql .= ",NOTE = '" . $param["note"] . "'";
     $sql .= ",UPDT = CURRENT_TIMESTAMP";
-
+    $sql .= " WHERE SELLNO = " . $param["sellNo"];
     return $sql;
 }
 
@@ -137,7 +137,7 @@ function fnSqlSellInsert($param)
 function fnSqlSellDelete($sellNo)
 {
     $sql = "UPDATE TBLSELL";
-    $sql .= " SET DEL = 1";
+    $sql .= " SET DEL = -1";
     $sql .= ",UPDT = CURRENT_TIMESTAMP";
     $sql .= " WHERE SELLNO = '$sellNo'";
 
