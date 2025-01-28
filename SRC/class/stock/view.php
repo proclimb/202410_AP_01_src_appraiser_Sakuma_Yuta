@@ -120,10 +120,9 @@ function subStockView($param)
 			return;
 		}
 
-		$sql = fnSqlStockList(1, $param);
+		$sql = fnSqlStockList(0, $param);
 		$res = mysqli_query($param["conn"], $sql);
 		$row = mysqli_fetch_array($res);
-
 		$count = $row[0];
 
 		$sPage = fnPage($count, $param["sPage"], 'stockSearch');
