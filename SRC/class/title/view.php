@@ -193,8 +193,6 @@ function subFTitleItemEditView($param)
                     <td class="f16">
                         <?php
                         $sql = fnSqlFTitleEdit($param["sDocNo"]);
-                        // var_dump($sql);確認用
-                        // echo "<br>";
                         $res = mysqli_query($param["conn"], $sql);
                         $row = mysqli_fetch_array($res);
                         print htmlspecialchars($row[3]);
