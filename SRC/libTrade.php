@@ -44,6 +44,10 @@ function subTrade()
 		<input type="hidden" name="orderTo" value="<?php print $orderTo; ?>" />
 		<input type="hidden" name="sPage" value="<?php print $sPage; ?>" />
 		<input type="hidden" name="tradeNo" />
+		<?php
+		// フォーム送信後にtradeNoを確認
+		var_dump($_POST['tradeNo']);
+		?>
 
 		<a href="javascript:form.act.value='tradeEdit';form.submit();"><img src="./images/btn_enter.png"></a>
 

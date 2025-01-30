@@ -1,6 +1,5 @@
 <?php
 // ライブラリの呼出し
-define("PASSWORD_DEFAULT", "2y");
 
 require('libDBInit.php');
 require('libDBConnect.php');
