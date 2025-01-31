@@ -104,15 +104,15 @@ function subAdminUserEdit()
 				<td><input type="text" name="name" value="<?php print $name; ?>" /></td>
 			</tr>
 			<tr>
-				<th>ID</th>
+				<th>ID<span class="red">（必須）</span></th>
 				<td><input type="text" name="id" value="<?php print $id; ?>" /></td>
 			</tr>
 			<tr>
-				<th>PASS</th>
+				<th>PASS<span class="red">（必須）</span></th>
 				<td><input type="text" name="password" value="<?php print $password; ?>" /></td>
 			</tr>
 			<tr>
-				<th>所属</th>
+				<th>所属<span class="red">（必須）</span></th>
 				<td><input type="radio" name="auth" value="0" checked="checked" /> <?php print fnAuthorityName(0); ?>
 					<input type="radio" name="auth" value="1" <?php if ($authority == 1) print ' checked="checked"'; ?> /> <?php print fnAuthorityName(1); ?>
 				</td>
