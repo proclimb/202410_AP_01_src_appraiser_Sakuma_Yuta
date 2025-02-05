@@ -46,7 +46,6 @@ function subTrade()
 		<input type="hidden" name="tradeNo" />
 		<?php
 		// フォーム送信後にtradeNoを確認
-		var_dump($_POST['tradeNo']);
 		?>
 
 		<a href="javascript:form.act.value='tradeEdit';form.submit();"><img src="./images/btn_enter.png"></a>

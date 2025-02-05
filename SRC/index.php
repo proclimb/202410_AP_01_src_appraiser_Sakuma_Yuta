@@ -43,8 +43,6 @@ require('class/title/control.php');
 // 一覧表示件数
 define("PAGE_MAX", 100);
 
-var_dump($_REQUEST);
-
 // ログインチェック
 switch ($_REQUEST['act']) {
         // ログインチェック

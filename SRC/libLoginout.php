@@ -53,7 +53,8 @@ function subLoginCheck()
 	$row = mysqli_fetch_array($res);
 
 	if ($row[0] && password_verify($pw, $row['PASSWORD'])) {
-		//if ($row[0]) { ★不具合修正 #32725 答えコピペだけだとログインできない
+	// if ($row[0]) {
+		#32725 答えコピペだけだとログインできない
 		//訂正前:hash化されていないパスワードを登録
 		//訂正後: hash化されたパスワードを比較しようとする。ここで不整合が起こるので、次回注意
 		$_COOKIE['cUserNo']   = $row[0];
