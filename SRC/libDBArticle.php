@@ -15,7 +15,7 @@ function fnSqlArticleList($flg, $sDel, $sArticle, $sRoom, $sKeyPlace, $sArticleN
 	$sql .= " FROM TBLARTICLE";
 	$sql .= " WHERE DEL = $sDel";
 	if ($sArticle) {
-		$sql .= " OR ARTICLE LIKE '%$sArticle$%'";
+		$sql .= " AND ARTICLE LIKE '%$sArticle%'";
 	}
 	if ($sRoom) {
 		$sql .= " OR ROOM LIKE '%$sRoom%'";
