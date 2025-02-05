@@ -121,7 +121,7 @@ function subArticle()
 				$sellCharge  = $row["SELLCHARGE"];
 			?>
 				<tr>
-					<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='articleEdit';form.articleNo.value='<?php print $rrticleNo ?>';form.submit();"><?php print $article ?></a></td>
+					<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='articleEdit';form.articleNo.value='<?php print $articleNo ?>';form.submit();"><?php print $article ?></a></td>
 					<td class="list_td<?php print $i ?>"><?php print $room ?></td>
 					<td class="list_td<?php print $i ?>"><?php print $drawing ?></td>
 					<td class="list_td<?php print $i ?>"><?php print $keyPlace ?></td>
@@ -164,7 +164,6 @@ function subArticleEdit()
 	$sPage   = $_REQUEST['sPage'];
 
 	$articleNo = $_REQUEST['articleNo'];
-
 	if ($articleNo) {
 		$sql = fnSqlArticleEdit($articleNo);
 		$res = mysqli_query($conn, $sql);
@@ -260,6 +259,9 @@ function subArticleEdit()
 
 		<a href="javascript:fnArticleEditCheck();"><img src="./images/<?php print $btnImage ?>" /></a>
 		<a href="javascript:form.act.value='article';form.submit();"><img src="./images/btn_return.png" /></a>
+		<?php if ($articleNo) { ?>
+			&nbsp;&nbsp;<a href="javascript:fnArticleDeleteCheck(<?php print $articleNo ?>);"><img src="./images/btn_del.png" /></a>
+		<?php } ?>
 	</form>
 <?php
 }
