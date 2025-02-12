@@ -63,7 +63,7 @@ function subArticle()
 				</tr>
 				<tr>
 					<th>部屋番号</th>
-					<td><input type="text" name="sRoom" value="" size="30" /><?php print $sRoom ?></td>
+					<td><input type="text" name="sRoom" value="<?php print $sRoom ?>" size="30" /></td>
 					<th>3Dパース</th>
 					<td><input type="text" name="sDrawing" value="<?php print $sDrawing ?>" size="30" /></td>
 				</tr>
@@ -183,7 +183,6 @@ function subArticleEdit()
 		$purpose = '登録';
 		$btnImage = 'btn_enter.png';
 	}
-
 	subMenu2();
 ?>
 	<script type="text/javascript" src="./js/article.js"></script>
@@ -223,35 +222,35 @@ function subArticleEdit()
 			</tr>
 			<tr>
 				<th>物件名<span class="red">（必須）</span></th>
-				<td><input type="text" name="article" value="<?php htmlspecialchars($article, ENT_QUOTES, 'UTF-8'); ?>" /></td>
+				<td><input type="text" name="article" value="<?php print $article; ?>" /></td>
 			</tr>
 			<tr>
 				<th>部屋番号</th>
-				<td><input type="text" name="room" value="<?php htmlspecialchars($room, ENT_QUOTES, 'UTF-8'); ?>" /></td>
+				<td><input type="text" name="room" value="<?php print $room; ?>" /></td>
 			</tr>
 			<tr>
 				<th>鍵場所</th>
-				<td><textarea name="keyPlace" cols="50" rows="10"><?php htmlspecialchars($keyPlace, ENT_QUOTES, 'UTF-8'); ?></textarea></td>
+				<td><textarea name="keyPlace" cols="50" rows="10"><?php print $keyPlace; ?></textarea></td>
 			</tr>
 			<tr>
 				<th>住所</th>
-				<td><input type="text" name="address" value="<?php htmlspecialchars($address, ENT_QUOTES, 'UTF-8'); ?>" /></td>
+				<td><input type="text" name="address" value="<?php print $address; ?>" /></td>
 			</tr>
 			<tr>
 				<th>備考</th>
-				<td><textarea name="articleNote" cols="50" rows="10"> <?php htmlspecialchars($articleNote, ENT_QUOTES, 'UTF-8'); ?></textarea></td>
+				<td><textarea name="articleNote" cols="50" rows="10"> <?php print $articleNote; ?></textarea></td>
 			</tr>
 			<tr>
 				<th>キーBox番号</th>
-				<td><input type="text" name="keyBox" value="<?php htmlspecialchars($keyBox, ENT_QUOTES, 'UTF-8'); ?>" /></td>
+				<td><input type="text" name="keyBox" value="<?php print $keyBox; ?>" /></td>
 			</tr>
 			<tr>
 				<th>3Dパース</th>
-				<td><input type="text" name="drawing" value="<?php htmlspecialchars($drawing, ENT_QUOTES, 'UTF-8'); ?>" /></td>
+				<td><input type="text" name="drawing" value="<?php print $drawing; ?>" /></td>
 			</tr>
 			<tr>
 				<th>営業担当者</th>
-				<td><input type="text" name="sellCharge" value="<?php htmlspecialchars($sellCharge, ENT_QUOTES, 'UTF-8'); ?>" /></td>
+				<td><input type="text" name="sellCharge" value="<?php print $sellCharge; ?>" /></td>
 			</tr>
 		</table>
 
