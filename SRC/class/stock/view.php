@@ -28,7 +28,7 @@ function subStockView($param)
 			<table border="0" cellpadding="2" cellspacing="0">
 				<tr>
 					<th>除外</th>
-					<td><input type="checkbox" name="sDel" value="1" <?php if ($param["sDel"] == 1) print ' checked="checked"' ?> /></td>
+					<td><input type="checkbox" name="sDel" value="0" /></td>
 					<th>最寄駅</th>
 					<td><input type="text" name="sStation" value="<?php print $param["sStation"] ?>" size="30" /></td>
 				</tr>
@@ -240,6 +240,7 @@ function subStockEditView($param)
 		<input type="hidden" name="orderTo" value="<?php print $param["orderTo"] ?>" />
 		<input type="hidden" name="sPage" value="<?php print $param["sPage"] ?>" />
 		<input type="hidden" name="stockNo" value="<?php print $param["stockNo"] ?>" />
+
 
 		<table border="0" cellpadding="5" cellspacing="1">
 			<tr>
